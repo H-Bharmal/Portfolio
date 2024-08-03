@@ -352,15 +352,14 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 			
 			return html`
 			<form
-    name="contact"
-    method="POST"
     data-netlify="true"
-    netlify-honeypot="bot-field"
-    action="/.netlify/functions/sendEmail"
-    className="metform-form-content"
-    ref=${parent.formContainerRef}
     
+    className="metform-form-content"
+	ref=${parent.formContainerRef}
+	onSubmit=${ validation.handleSubmit( parent.handleFormSubmit ) }
+				
 >
+<input type="hidden" name="form-name" value="contact">
 
 	${is_dummy_markup ? message_position === 'top' ?  props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
 	${is_dummy_markup ? ' ' :  message_position === 'top' ? props.SubmitResponseMarkup`${parent}${state}${message_successIcon}${message_errorIcon}${message_proClass}` : ''}
