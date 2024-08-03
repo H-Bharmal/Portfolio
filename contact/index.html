@@ -359,7 +359,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
     action="/.netlify/functions/sendEmail"
     className="metform-form-content"
     ref=${parent.formContainerRef}
-    onSubmit=${validation.handleSubmit(parent.handleFormSubmit)}
+    
 >
 
 	${is_dummy_markup ? message_position === 'top' ?  props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
